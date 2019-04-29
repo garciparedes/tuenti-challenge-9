@@ -1,0 +1,149 @@
+6
+1
+Galactica:New Earth
+2
+Galactica:A
+A:New Earth
+8
+Galactica:A,B,New Earth
+A:C,D
+B:C,D
+C:E
+D:E
+E:F,G
+F:New Earth
+G:New Earth
+4
+Galactica:A,New Earth
+A:B,New Earth
+B:C,New Earth
+C:New Earth
+101
+Galactica:Planet-1,New Earth
+Planet-1:Planet-2,New Earth
+Planet-2:Planet-3,New Earth
+Planet-3:Planet-4,New Earth
+Planet-4:Planet-5,New Earth
+Planet-5:Planet-6,New Earth
+Planet-6:Planet-7,New Earth
+Planet-7:Planet-8,New Earth
+Planet-8:Planet-9,New Earth
+Planet-9:Planet-10,New Earth
+Planet-10:Planet-11,New Earth
+Planet-11:Planet-12,New Earth
+Planet-12:Planet-13,New Earth
+Planet-13:Planet-14,New Earth
+Planet-14:Planet-15,New Earth
+Planet-15:Planet-16,New Earth
+Planet-16:Planet-17,New Earth
+Planet-17:Planet-18,New Earth
+Planet-18:Planet-19,New Earth
+Planet-19:Planet-20,New Earth
+Planet-20:Planet-21,New Earth
+Planet-21:Planet-22,New Earth
+Planet-22:Planet-23,New Earth
+Planet-23:Planet-24,New Earth
+Planet-24:Planet-25,New Earth
+Planet-25:Planet-26,New Earth
+Planet-26:Planet-27,New Earth
+Planet-27:Planet-28,New Earth
+Planet-28:Planet-29,New Earth
+Planet-29:Planet-30,New Earth
+Planet-30:Planet-31,New Earth
+Planet-31:Planet-32,New Earth
+Planet-32:Planet-33,New Earth
+Planet-33:Planet-34,New Earth
+Planet-34:Planet-35,New Earth
+Planet-35:Planet-36,New Earth
+Planet-36:Planet-37,New Earth
+Planet-37:Planet-38,New Earth
+Planet-38:Planet-39,New Earth
+Planet-39:Planet-40,New Earth
+Planet-40:Planet-41,New Earth
+Planet-41:Planet-42,New Earth
+Planet-42:Planet-43,New Earth
+Planet-43:Planet-44,New Earth
+Planet-44:Planet-45,New Earth
+Planet-45:Planet-46,New Earth
+Planet-46:Planet-47,New Earth
+Planet-47:Planet-48,New Earth
+Planet-48:Planet-49,New Earth
+Planet-49:Planet-50,New Earth
+Planet-50:Planet-51,New Earth
+Planet-51:Planet-52,New Earth
+Planet-52:Planet-53,New Earth
+Planet-53:Planet-54,New Earth
+Planet-54:Planet-55,New Earth
+Planet-55:Planet-56,New Earth
+Planet-56:Planet-57,New Earth
+Planet-57:Planet-58,New Earth
+Planet-58:Planet-59,New Earth
+Planet-59:Planet-60,New Earth
+Planet-60:Planet-61,New Earth
+Planet-61:Planet-62,New Earth
+Planet-62:Planet-63,New Earth
+Planet-63:Planet-64,New Earth
+Planet-64:Planet-65,New Earth
+Planet-65:Planet-66,New Earth
+Planet-66:Planet-67,New Earth
+Planet-67:Planet-68,New Earth
+Planet-68:Planet-69,New Earth
+Planet-69:Planet-70,New Earth
+Planet-70:Planet-71,New Earth
+Planet-71:Planet-72,New Earth
+Planet-72:Planet-73,New Earth
+Planet-73:Planet-74,New Earth
+Planet-74:Planet-75,New Earth
+Planet-75:Planet-76,New Earth
+Planet-76:Planet-77,New Earth
+Planet-77:Planet-78,New Earth
+Planet-78:Planet-79,New Earth
+Planet-79:Planet-80,New Earth
+Planet-80:Planet-81,New Earth
+Planet-81:Planet-82,New Earth
+Planet-82:Planet-83,New Earth
+Planet-83:Planet-84,New Earth
+Planet-84:Planet-85,New Earth
+Planet-85:Planet-86,New Earth
+Planet-86:Planet-87,New Earth
+Planet-87:Planet-88,New Earth
+Planet-88:Planet-89,New Earth
+Planet-89:Planet-90,New Earth
+Planet-90:Planet-91,New Earth
+Planet-91:Planet-92,New Earth
+Planet-92:Planet-93,New Earth
+Planet-93:Planet-94,New Earth
+Planet-94:Planet-95,New Earth
+Planet-95:Planet-96,New Earth
+Planet-96:Planet-97,New Earth
+Planet-97:Planet-98,New Earth
+Planet-98:Planet-99,New Earth
+Planet-99:Planet-100,New Earth
+Planet-100:New Earth
+26
+Galactica:L1_1,L1_2,L1_3,L1_4,L1_5
+L1_1:L2_1,L2_2,L2_3,L2_4,L2_5
+L1_2:L2_1,L2_2,L2_3,L2_4,L2_5
+L1_3:L2_1,L2_2,L2_3,L2_4,L2_5
+L1_4:L2_1,L2_2,L2_3,L2_4,L2_5
+L1_5:L2_1,L2_2,L2_3,L2_4,L2_5
+L2_1:L3_1,L3_2,L3_3,L3_4,L3_5
+L2_2:L3_1,L3_2,L3_3,L3_4,L3_5
+L2_3:L3_1,L3_2,L3_3,L3_4,L3_5
+L2_4:L3_1,L3_2,L3_3,L3_4,L3_5
+L2_5:L3_1,L3_2,L3_3,L3_4,L3_5
+L3_1:L4_1,L4_2,L4_3,L4_4,L4_5
+L3_2:L4_1,L4_2,L4_3,L4_4,L4_5
+L3_3:L4_1,L4_2,L4_3,L4_4,L4_5
+L3_4:L4_1,L4_2,L4_3,L4_4,L4_5
+L3_5:L4_1,L4_2,L4_3,L4_4,L4_5
+L4_1:L5_1,L5_2,L5_3,L5_4,L5_5
+L4_2:L5_1,L5_2,L5_3,L5_4,L5_5
+L4_3:L5_1,L5_2,L5_3,L5_4,L5_5
+L4_4:L5_1,L5_2,L5_3,L5_4,L5_5
+L4_5:L5_1,L5_2,L5_3,L5_4,L5_5
+L5_1:New Earth
+L5_2:New Earth
+L5_3:New Earth
+L5_4:New Earth
+L5_5:New Earth

@@ -1,0 +1,9 @@
+1
+7
+Galactica:A,B,C
+A:E,D
+B:D
+C:D,F
+D:F
+E:New Earth
+F:New Earth
