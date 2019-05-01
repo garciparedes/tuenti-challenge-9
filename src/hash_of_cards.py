@@ -109,7 +109,7 @@ def generate_result(possibles: List[List[List[int]]], with_one_more) -> List[Lis
 
 
 def update_possibles(solution: List[int], possibles) -> List[int]:
-    min_sizes = list(map(lambda x: min(map(len, x)), possibles))
+    min_sizes = list(map(lambda x: max(map(len, x)), possibles))
     min_size = min(min_sizes)
     solution = list(x + 256 if min_sizes[i] == min_size else x for i, x in enumerate(solution))
     return solution
@@ -137,21 +137,19 @@ def possible_decomposes(value: int) -> List[List[int]]:
     result = list()
     if 48 <= value <= 122:
         result += [[value]]
-
-    if 96 <= value <= 170:
-        result += [[48, value - 48]]
-    if 170 < value <= 244:
-        result += [[122, value - 122]]
-    if 144 <= value <= 218:
-        result += [[48, 48, value - 48 * 2]]
-    if 218 < value:
+    if 96 < value:
+        d1 = possible_decomposes(value - 48)
+        for i in range(len(d1)):
+            d1[i].append(48)
+        result += d1
+    if 170 < value:
         d1 = possible_decomposes(value - 122)
-        d2 = deepcopy(d1)
         for i in range(len(d1)):
             d1[i].append(122)
-            d2[i].extend([48, 74])
-        result += d1 + d2
+        result += d1
 
+    result = list(sorted(value) for value in result)
+    result = sorted(result, key=lambda x: (len(x), min(x)))
     assert all(sum(r) == value for r in result)
     return result
 
@@ -161,6 +159,7 @@ def solve_case():
     altered = read_block()
 
     original_hashed = not_so_complex_hash(original)
+    # altered_hashed = not_so_complex_hash(altered)
     altered_preamble, altered_body = split_block(altered)
 
     print_section = generate_print_section(altered_preamble, altered_body, original_hashed)
