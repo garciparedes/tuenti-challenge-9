@@ -108,10 +108,11 @@ def generate_result(possibles: List[List[List[int]]], with_one_more) -> List[Lis
     return result
 
 
-def update_possibles(solution: List[int], possibles) -> List[int]:
+def update_possibles(solution: List[int], possibles, with_one_more) -> List[int]:
     min_sizes = list(map(lambda x: max(map(len, x)), possibles))
     min_size = min(min_sizes)
     solution = list(x + 256 if min_sizes[i] == min_size else x for i, x in enumerate(solution))
+    solution = list(x + 256 if min_sizes[i] == min_size + 1 and i in with_one_more else x for i, x in enumerate(solution))
     return solution
 
 
@@ -122,7 +123,7 @@ def find_characters(additional: int, offset: int, solution: List[int]) -> List[L
     possibles = list(possible_decomposes(v) for v in solution)
     result = generate_result(possibles, with_one_more)
     while not result:
-        solution = update_possibles(solution, possibles)
+        solution = update_possibles(solution, possibles, with_one_more)
         possibles = list(possible_decomposes(v) for v in solution)
         result = generate_result(possibles, with_one_more)
 
