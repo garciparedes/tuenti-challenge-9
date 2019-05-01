@@ -10,3 +10,4 @@
 * Challenge 4 - Candy patterns: [Source](src/candy_patterns.py) - [Input](res/candy_patterns)
 * Challenge 5 - Forbidden Love: [Source](src/forbidden_love.py) - [Input](res/forbidden_love)
 * Challenge 6 - Alphabet from outer space: [Source](src/alphabet.py) - [Input](res/alphabet)
+* Challenge 7 - Hash of cards: [Source](src/hash_of_cards.py) - [Input](res/hash_of_cards)

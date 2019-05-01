@@ -1,0 +1,35 @@
+3
+3
+From: Mr Darth Vader;To: Luke Skywalker;
+------
+I'm your father.
+3
+From: Jabba the Hutt;To: Luke Skywalker;
+------
+I'm your father.
+6
+From: Kurohige;
+To: Akainu;
+Subject: Sichibukai deal
+------
+I'll bring you Ace for a Sichibukai seat.
+Deal?
+6
+From: Kurohige;
+To: Akainu;
+Subject: Sichibukai deal
+------
+I'll bring you Marco the Phoenix for a Sichibukai seat.
+Deal?
+5
+From: Bender!!;
+To: Moon People;
+------
+Yeah, well, I'm gonna go build my own theme park with blackjack and hookers.
+In fact, forget the park.
+5
+From: Zoidberg;
+To: Moon People;
+------
+Yeah, well, I'm gonna go build my own theme park with anchovies and hookers.
+In fact, call it Rancho Zoidberg.
