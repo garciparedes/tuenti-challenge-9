@@ -13,3 +13,5 @@
 * Challenge 7 - Hash of cards: [Source](src/hash_of_cards.py) - [Input](res/hash_of_cards)
 * Challenge 8 - Tasty secrets: Skipped
 * Challenge 9 - Helping Nobita: [Source](src/helping_nobita.py) - [Input](res/helping_nobita)
+* Challenge 10 - Not So Assured: Skipped
+* Challenge 11 - Kepler-452: [Source](src/kepler.py) - [Input](res/kepler)
