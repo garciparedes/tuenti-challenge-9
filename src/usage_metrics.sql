@@ -1,43 +1,35 @@
-SELECT table_from.user_id,
-       table_from.date_time                                            as session_from,
-       table_to.date_time                                              as session_to,
-       TIMESTAMPDIFF(SECOND, table_from.date_time, table_to.date_time) as seconds,
-       (
-         SELECT COUNT(*)
-         FROM activity as act
-         WHERE date_time BETWEEN table_from.date_time AND table_to.date_time
-           AND user_id = table_from.user_id
-       ) as num_actions
-FROM (
-         SELECT RANK() over (PARTITION BY user_id ORDER BY date_time) as idx,
-                date_time,
-                user_id
-         FROM (
-                  SELECT LAG(action, 1) OVER (PARTITION BY user_id ORDER BY date_time) AS previous,
-                         date_time,
-                         user_id,
-                         action
-                  FROM activity
-              ) AS T1
-         WHERE T1.previous IS NULL
-            OR T1.action LIKE 'open'
-            OR T1.previous LIKE 'close'
-         ORDER BY user_id, date_time
-     ) AS table_from INNER JOIN (
-         SELECT RANK() over (PARTITION BY user_id ORDER BY date_time) as idx,
-                date_time,
-                user_id
-         FROM (SELECT LAG(action, -1) OVER (PARTITION BY user_id ORDER BY date_time) AS next,
-                      date_time,
-                      user_id,
-                      action
-               FROM activity
-              ) AS T1
-         WHERE T1.next IS NULL
-            OR T1.action LIKE 'close'
-            OR T1.next LIKE 'open'
-         ORDER BY user_id, date_time
-     ) AS table_to ON table_from.idx = table_to.idx AND
-                 table_from.user_id = table_to.user_id
+SELECT CAST(table_from.user_id AS INTEGER)                                              AS user_id,
+       CAST(DATE_FORMAT(table_from.date_time, '%Y-%m-%d %H:%i:%S') AS CHAR)             AS session_from,
+       CAST(DATE_FORMAT(table_to.date_time, '%Y-%m-%d %H:%i:%S') AS CHAR)               AS session_to,
+       CAST(TIMESTAMPDIFF(SECOND, table_from.date_time, table_to.date_time) AS INTEGER) AS seconds,
+       CAST((SELECT COUNT(*)
+             FROM activity
+             WHERE date_time BETWEEN table_from.date_time AND table_to.date_time
+               AND user_id = table_from.user_id) AS INTEGER)                            AS num_actions
+FROM (SELECT RANK() OVER (ORDER BY t.user_id, t.date_time) AS idx,
+             t.date_time,
+             t.user_id
+      FROM (SELECT LAG(a.action, 1) OVER (PARTITION BY a.user_id ORDER BY a.date_time) AS previous,
+                   a.date_time,
+                   a.user_id,
+                   a.action
+            FROM activity AS a
+           ) AS t
+      WHERE t.action LIKE 'open'
+         OR t.previous IS NULL
+         OR t.previous LIKE 'close'
+     ) AS table_from
+         INNER JOIN (SELECT RANK() OVER (ORDER BY t.user_id, t.date_time) AS idx,
+                            t.date_time,
+                            t.user_id
+                     FROM (SELECT LAG(a.action, -1) OVER (PARTITION BY a.user_id ORDER BY a.date_time) AS next,
+                                  a.date_time,
+                                  a.user_id,
+                                  a.action
+                           FROM activity AS a
+                          ) AS t
+                     WHERE t.action LIKE 'close'
+                        OR t.next IS NULL
+                        OR t.next LIKE 'open'
+) AS table_to ON table_from.idx = table_to.idx
 ORDER BY user_id, session_from;
-
