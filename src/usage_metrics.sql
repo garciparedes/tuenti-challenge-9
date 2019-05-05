@@ -2,12 +2,11 @@ WITH table_from AS (
     SELECT ROW_NUMBER() OVER(ORDER BY t.user_id, t.date_time) AS idx,
            t.date_time,
            t.user_id
-    FROM (SELECT LAG(a.action, 1) OVER(PARTITION BY a.user_id ORDER BY a.date_time) AS previous,
+    FROM (SELECT LAG(a.action) OVER(PARTITION BY a.user_id ORDER BY a.date_time) AS previous,
                  a.date_time,
                  a.user_id,
                  a.action
-          FROM activity AS a
-         ) AS t
+          FROM activity AS a) AS t
     WHERE t.action LIKE 'open'
        OR t.previous IS NULL
        OR t.previous LIKE 'close'
@@ -16,12 +15,11 @@ WITH table_from AS (
          SELECT ROW_NUMBER() OVER(ORDER BY t.user_id, t.date_time) AS idx,
                 t.date_time,
                 t.user_id
-         FROM (SELECT LAG(a.action, -1) OVER(PARTITION BY a.user_id ORDER BY a.date_time) AS next,
+         FROM (SELECT LEAD(a.action) OVER(PARTITION BY a.user_id ORDER BY a.date_time) AS next,
                       a.date_time,
                       a.user_id,
                       a.action
-               FROM activity AS a
-              ) AS t
+               FROM activity AS a) AS t
          WHERE t.action LIKE 'close'
             OR t.next IS NULL
             OR t.next LIKE 'open'
