@@ -15,3 +15,4 @@
 * Challenge 9 - Helping Nobita: [Source](src/helping_nobita.py) - [Input](res/helping_nobita)
 * Challenge 10 - Not So Assured: Skipped
 * Challenge 11 - Kepler-452: [Source](src/kepler.py) - [Input](res/kepler)
+* Challenge 12 - Tuenti App Usage Metrics: [Source](src/usage_metrics.sql) - [Input](res/usage_metrics)
